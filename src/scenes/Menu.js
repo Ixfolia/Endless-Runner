@@ -3,9 +3,16 @@ class Menu extends Phaser.Scene {
         super('menuScene');
     }
 
+    preload() {
+        // Load images/tile sprites
+        this.load.path = './assets/'
+        this.load.image("background", "testbg.png");
+        this.load.image("playButton", "Play Button.png"); // Load the play button image
+    }
+
     create() {
         // Add background image
-        this.add.image(0, 0, 'background').setOrigin(0);
+        this.add.image(0, 0, 'background').setOrigin(0)
 
         // Add title text
         this.add.text(this.game.config.width / 2, 100, 'Endless Runner', {
@@ -14,23 +21,16 @@ class Menu extends Phaser.Scene {
             color: '#FAC898'
         }).setOrigin(0.5);
 
-        // Add play text
-        const playText = this.add.text(this.game.config.width / 2, 200, 'Press T to Play', {
-            fontFamily: 'Arial',
-            fontSize: "32px",
-            color: '#FAC898'
-        }).setOrigin(0.5);
-    
-        // Have T as input to start game
-        this.keyT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.T);
+        
+        // Add play button
+        const playButton = this.add.image(this.game.config.width / 2, this.game.config.height / 2, 'playButton').setOrigin(0.5);
+        playButton.setInteractive(); // Make the button interactive
+        playButton.setScale(7);
 
-    }
-
-    update() {
-        // Check if the T key has been pressed
-        if (Phaser.Input.Keyboard.JustDown(this.keyT)) {
+        // Add event listener to the play button
+        playButton.on('pointerdown', () => {
             // Start the play scene
             this.scene.start("playScene");
-        }
+        });
     }
 }
