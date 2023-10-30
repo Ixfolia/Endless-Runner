@@ -8,6 +8,7 @@ class Menu extends Phaser.Scene {
         this.load.path = './assets/'
         this.load.image("background", "testbg.png");
         this.load.image("playButton", "Play Button.png"); // Load the play button image
+        this.load.image("player", "playerEndless.png")
     }
 
     create() {
@@ -32,5 +33,10 @@ class Menu extends Phaser.Scene {
             // Start the play scene
             this.scene.start("playScene");
         });
+
+        // Add player image
+        this.player = this.add.image(this.game.config.width / 2, this.game.config.height / 2 + 200, "player").setScale(10);
+
+
     }
 }
