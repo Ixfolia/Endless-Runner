@@ -28,6 +28,14 @@ class Menu extends Phaser.Scene {
         playButton.setInteractive(); // Make the button interactive
         playButton.setScale(7);
 
+        // Add text instructions
+        this.add.text(this.game.config.width / 2 - 400, this.game.config.height / 2 - 100, 
+        'Collect the coins! Try to not get hit :)\n W to move up \n S to move down \n Every 3 seconds, projectiles get faster.', {
+            fontFamily: 'Arial',
+            fontSize: "25px",
+            color: '#FAC898'
+        }).setOrigin(0.5);
+
         // Add event listener to the play button
         playButton.on('pointerdown', () => {
             // Start the play scene
