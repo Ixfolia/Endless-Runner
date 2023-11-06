@@ -38,7 +38,7 @@ class Menu extends Phaser.Scene {
 
         // Add credits button
         let credits = this.add.text(this.game.config.width / 2 + 200, this.game.config.height / 4,
-         'Credits:\n BGM: https://www.youtube.com/watch?v=9AaIhEydxSQ\n Start button, copied and edited: https://www.shutterstock.com/image-vector/pixel-art-game-buttons-start-play-2149162341\n Background: made by my roommate Tom\n SFX made in this site: https://sfxr.me', {
+         'Credits:\n BGM: https://www.youtube.com/watch?v=9AaIhEydxSQ\n Start button, copied and edited: https://www.shutterstock.com/image-vector/pixel-art-game-buttons-start-play-2149162341\n Background: made by my roommate Tom\n SFX made in this site: https://sfxr.me\n Everything else is me', {
             fontFamily: 'Arial',
             fontSize: "15px",
             // black color
