@@ -16,7 +16,7 @@ class Menu extends Phaser.Scene {
         this.add.image(0, 0, 'background').setOrigin(0)
 
         // Add title text
-        this.add.text(this.game.config.width / 2, 100, 'Endless Runner', {
+        this.add.text(this.game.config.width / 2, 100, 'UFO Survival', {
             fontFamily: 'Arial',
             fontSize: "64px",
             color: '#FAC898'
