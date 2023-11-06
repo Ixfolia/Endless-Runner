@@ -11,6 +11,11 @@ class Play extends Phaser.Scene{
         this.load.image("box", "Box Sprite.png");
         this.load.atlas("rocket", "Rocket.png");
         this.load.image("coin", "Coin.png");
+        this.load.audio("BGM", "BGM.mp3");
+        this.load.audio("coinSound", "pickupCoin.wav");
+        this.load.audio("explosion", "explosion.wav");
+        this.load.audio("ufo fire sound", "UFO sound effect.wav");
+        this.load.audio("box explosion", "boxExplosion.wav")
     }
 
     create(){
@@ -84,12 +89,14 @@ class Play extends Phaser.Scene{
             // box colliders
         this.physics.add.collider(this.player, this.box, () => {
             // this.scene.start("playScene");
+            this.boxExplosion.play();
             this.gameOver = true;
         })
 
             // rocket colliders
         this.physics.add.collider(this.player, this.rocket, () => {
             // this.scene.start("playScene");
+            this.explosion.play();
             this.gameOver = true;
         })
 
@@ -148,7 +155,23 @@ class Play extends Phaser.Scene{
         // Add gameOver text
         this.gameOverText = this.add.text(game.config.width / 2, game.config.height / 2, 'Game Over\nPress R to Restart', { fontSize: '32px', fill: '#f00', backgroundColor: "#000" });
         this.gameOverText.visible = false;
+
+        // Add BGM
+        this.BGM = this.sound.add("BGM", {volume: 0.2, loop: true});
+        this.BGM.play();
+
+        // Add coin sound
+        this.coinSound = this.sound.add("coinSound", {volume: 0.3});
+        
+        // Add explosion sound
+        this.explosion = this.sound.add("explosion", {volume: 0.4});
    
+        // Add UFO sound effect
+        this.ufoSound = this.sound.add("ufo fire sound", {volume: 0.2});
+
+        // Add box explosion sound
+        this.boxExplosion = this.sound.add("box explosion", {volume: 0.2});
+
     }
 
     update(){
@@ -174,12 +197,13 @@ class Play extends Phaser.Scene{
 
         if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W).isDown){
             // Player moves up
-            playerVector.y = -200
+            playerVector.y = -300
+            this.ufoSound.play();
         }
 
         else if (this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S).isDown){
             // Player moves down
-            playerVector.y = 200
+            playerVector.y = 300
         }
         else {
             playerVector.y = 0
@@ -225,6 +249,7 @@ class Play extends Phaser.Scene{
         // Add 10 to score
         this.Score += 10;
         this.TotalScore.setText(this.Score);
+        this.coinSound.play();
     
         // Reset coin
         this.coinReset();
