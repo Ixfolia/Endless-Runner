@@ -5,10 +5,14 @@ class Menu extends Phaser.Scene {
 
     preload() {
         // Load images/tile sprites
-        this.load.path = './assets/'
-        this.load.image("background", "testbg.png");
-        this.load.image("playButton", "Play Button.png"); // Load the play button image
-        this.load.image("player", "playerEndless.png")
+        // this.load.path = './assets/'
+        // this.load.image("background", "testbg.png");
+        // this.load.image("playButton", "Play Button.png"); // Load the play button image
+        // this.load.image("player", "playerEndless.png")
+
+        this.load.image("background", "./assets/testbg.png");
+        this.load.image("playButton", "./assets/Play Button.png"); // Load the play button image
+        this.load.image("player", "./assets/playerEndless.png")
     }
 
     create() {

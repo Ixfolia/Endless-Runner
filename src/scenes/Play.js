@@ -5,17 +5,29 @@ class Play extends Phaser.Scene{
 
     preload(){
         // Load images/tile sprites
-        this.load.path = './assets/'
-        this.load.image("playBackground", "playBackground.png");
-        this.load.atlas("playerRun", "UFO.png", "UFO.json");
-        this.load.image("box", "Box Sprite.png");
-        this.load.atlas("rocket", "Rocket.png");
-        this.load.image("coin", "Coin.png");
-        this.load.audio("BGM", "BGM.mp3");
-        this.load.audio("coinSound", "pickupCoin.wav");
-        this.load.audio("explosion", "explosion.wav");
-        this.load.audio("ufo fire sound", "UFO sound effect.wav");
-        this.load.audio("box explosion", "boxExplosion.wav")
+        // this.load.path = './assets/'
+        // this.load.image("playBackground", "playBackground.png");
+        // this.load.atlas("playerRun", "UFO.png", "UFO.json");
+        // this.load.image("box", "Box Sprite.png");
+        // this.load.atlas("rocket", "Rocket.png");
+        // this.load.image("coin", "Coin.png");
+        // this.load.audio("BGM", "BGM.mp3");
+        // this.load.audio("coinSound", "pickupCoin.wav");
+        // this.load.audio("explosion", "explosion.wav");
+        // this.load.audio("ufo fire sound", "UFO sound effect.wav");
+        // this.load.audio("box explosion", "boxExplosion.wav")
+
+        this.load.image("playBackground", "./assets/playBackground.png");
+        this.load.atlas("playerRun", "./assets/UFO.png", "./assets/UFO.json");
+        this.load.image("box", "./assets/Box Sprite.png");
+        this.load.atlas("rocket", "./assets/Rocket.png", "./assets/Rocket.json");
+        this.load.image("coin", "./assets/Coin.png");
+        this.load.audio("BGM", "./assets/BGM.mp3");
+        this.load.audio("coinSound", "./assets/pickupCoin.wav");
+        this.load.audio("explosion", "./assets/explosion.wav");
+        this.load.audio("ufo fire sound", "./assets/UFO sound effect.wav");
+        this.load.audio("box explosion", "./assets/boxExplosion.wav")
+        
     }
 
     create(){
