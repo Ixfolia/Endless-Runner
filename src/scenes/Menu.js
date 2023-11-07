@@ -39,8 +39,8 @@ class Menu extends Phaser.Scene {
             color: '#FAC898'
         }).setOrigin(0.5);
 
-        // Add credits button
-        let credits = this.add.text(this.game.config.width / 2 + 100, this.game.config.height / 2 + 200,
+        // Add credits
+        this.add.text(this.game.config.width / 2 + 100, this.game.config.height / 2 + 200,
          'Credits:\n BGM: https://www.youtube.com/watch?v=9AaIhEydxSQ\n Start button, sorta copied and edited myself: https://www.shutterstock.com/image-vector/pixel-art-game-buttons-start-play-2149162341\n Background: made by my roommate Tom\n SFX made in this site: https://sfxr.me\n Everything else is me', {
             fontFamily: 'Arial',
             fontSize: "18px",
@@ -48,7 +48,6 @@ class Menu extends Phaser.Scene {
             color: "#000000",
             backgroundColor: '#FFFFFF'
         }).setOrigin(0.5);
-        credits.setInteractive(); // Make the button interactive
 
         // Add event listener to the play button
         playButton.on('pointerdown', () => {
