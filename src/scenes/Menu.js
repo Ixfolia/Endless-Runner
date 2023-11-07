@@ -12,7 +12,6 @@ class Menu extends Phaser.Scene {
 
         this.load.image("background", "./assets/testbg.png");
         this.load.image("playButton", "./assets/Play Button.png"); // Load the play button image
-        this.load.image("player", "./assets/playerEndless.png")
     }
 
     create() {
@@ -41,10 +40,10 @@ class Menu extends Phaser.Scene {
         }).setOrigin(0.5);
 
         // Add credits button
-        let credits = this.add.text(this.game.config.width / 2 + 200, this.game.config.height / 4,
-         'Credits:\n BGM: https://www.youtube.com/watch?v=9AaIhEydxSQ\n Start button, copied and edited: https://www.shutterstock.com/image-vector/pixel-art-game-buttons-start-play-2149162341\n Background: made by my roommate Tom\n SFX made in this site: https://sfxr.me\n Everything else is me', {
+        let credits = this.add.text(this.game.config.width / 2 + 100, this.game.config.height / 2 + 200,
+         'Credits:\n BGM: https://www.youtube.com/watch?v=9AaIhEydxSQ\n Start button, sorta copied and edited myself: https://www.shutterstock.com/image-vector/pixel-art-game-buttons-start-play-2149162341\n Background: made by my roommate Tom\n SFX made in this site: https://sfxr.me\n Everything else is me', {
             fontFamily: 'Arial',
-            fontSize: "15px",
+            fontSize: "18px",
             // black color
             color: "#000000",
             backgroundColor: '#FFFFFF'
@@ -57,9 +56,7 @@ class Menu extends Phaser.Scene {
             this.scene.start("playScene");
         });
 
-        // Add player image
-        this.player = this.add.image(this.game.config.width / 2, this.game.config.height / 2 + 200, "player").setScale(10);
-
+        
 
     }
 }
