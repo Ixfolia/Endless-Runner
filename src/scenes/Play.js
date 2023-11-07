@@ -36,7 +36,7 @@ class Play extends Phaser.Scene{
 
         // Add player
         this.player = this.physics.add.sprite(game.config.width / 2 - 500, game.config.height / 2 + 220, "playerRun", "UFO 0.ase").setScale(10);
-        this.player.body.setSize(12, 9, true);
+        this.player.body.setSize(11.5, 8, true);
         this.player.body.setCollideWorldBounds(true);
 
         this.textures.addSpriteSheetFromAtlas("UFO 0.ase", {frameHeight: 32, frameWidth: 16, atlas: "playerRun", frame: "UFO 0.ase"})
@@ -62,7 +62,7 @@ class Play extends Phaser.Scene{
         // this.rocket = this.physics.add.sprite(game.config.width / 2 + 500, game.config.height / 2 + 220, "rocket").setScale(10);
         this.textures.addSpriteSheetFromAtlas("Rocket 0.ase", {frameHeight: 32, frameWidth: 16, atlas: "rocket", frame: "Rocket 0.ase"})
         this.rocket.body.setImmovable(true);
-        this.rocket.body.setSize(18, 8, true);
+        this.rocket.body.setSize(18, 6, true);
 
 
         this.anims.create({
